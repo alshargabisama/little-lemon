@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Markazi+Text:wght@400;500&display=swap');
+
+/* CSS Variables */
+:root {
+  --primary-green: #495e57;
+  --primary-yellow: #f4ce14;
+  --secondary-peach: #ee9972;
+  --secondary-cream: #fbdabb;
+  --highlight-gray: #edefee;
+  --dark-charcoal: #333333;
+  --border-radius: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Karla', sans-serif;
+  color: var(--dark-charcoal);
+  background-color: #ffffff;
+  line-height: 1.5;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Typography Rules */
+h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 4rem; /* 64pt */
+  font-weight: 500;
+  line-height: 1;
+  color: var(--primary-yellow);
+}
+
+h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 2.5rem; /* 40pt */
+  font-weight: 400;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+h3 {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.25rem; /* 20pt */
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--dark-charcoal);
+}
+
+p {
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem; /* 16pt */
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 65ch;
+  color: var(--dark-charcoal);
+}
+
+span.price {
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary-peach);
+}
+
+/* Navigation Elements */
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul li a {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--dark-charcoal);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: var(--primary-green);
+}
+
+/* Images & Cards */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-img,
+.card-img {
+  border-radius: var(--border-radius);
+  object-fit: cover;
+}
+
+/* Primary Action Buttons */
+.btn-primary {
+  background-color: var(--primary-yellow);
+  color: var(--dark-charcoal);
+  font-family: 'Karla', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e5be0b;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
 }

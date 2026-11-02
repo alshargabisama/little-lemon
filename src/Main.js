@@ -1,7 +1,8 @@
-function Main(){
-    return(
-    <main className="main"> 
-<p> this is juts a text</p>
-    </main>);
+function Main() {
+  return (
+    <main className="main-content">
+      {/* Reservation and page content goes here */}
+    </main>
+  );
 }
-export default Main; 
+export default Main;
