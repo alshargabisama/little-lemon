@@ -1,18 +1,14 @@
-/* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Markazi+Text:wght@400;500&display=swap');
 
-/* CSS Variables */
 :root {
   --primary-green: #495e57;
   --primary-yellow: #f4ce14;
   --secondary-peach: #ee9972;
-  --secondary-cream: #fbdabb;
   --highlight-gray: #edefee;
   --dark-charcoal: #333333;
-  --border-radius: 16px;
+  --card-radius: 16px;
 }
 
-/* Global Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,109 +22,383 @@ body {
   line-height: 1.5;
 }
 
-/* Typography Rules */
-h1 {
-  font-family: 'Markazi Text', serif;
-  font-size: 4rem; /* 64pt */
-  font-weight: 500;
-  line-height: 1;
-  color: var(--primary-yellow);
-}
-
-h2 {
-  font-family: 'Markazi Text', serif;
-  font-size: 2.5rem; /* 40pt */
-  font-weight: 400;
-  line-height: 1.1;
-  color: #ffffff;
-}
-
-h3 {
-  font-family: 'Karla', sans-serif;
-  font-size: 1.25rem; /* 20pt */
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--dark-charcoal);
-}
-
-p {
-  font-family: 'Karla', sans-serif;
-  font-size: 1rem; /* 16pt */
-  font-weight: 400;
-  line-height: 1.5;
-  max-width: 65ch;
-  color: var(--dark-charcoal);
-}
-
-span.price {
-  font-family: 'Karla', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--secondary-peach);
-}
-
-/* Navigation Elements */
-nav {
+/* 1. Header & Nav */
+.header-nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 1.5rem;
 }
 
-nav ul {
+.nav-logo {
+  height: 48px;
+  width: auto;
+}
+
+.nav-menu {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+  gap: 1.75rem;
 }
 
-nav ul li a {
-  font-family: 'Karla', sans-serif;
-  font-weight: 700;
-  font-size: 1.125rem;
-  color: var(--dark-charcoal);
+.nav-menu a {
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  font-weight: 700;
+  color: var(--dark-charcoal);
+  font-size: 1rem;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
+.nav-menu a:hover {
   color: var(--primary-green);
 }
 
-/* Images & Cards */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* 2. Hero (CallToAction) */
+.hero-section {
+  background-color: var(--primary-green);
+  padding: 2.5rem 1.5rem 3.5rem 1.5rem;
 }
 
-.hero-img,
-.card-img {
-  border-radius: var(--border-radius);
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.hero-text {
+  max-width: 420px;
+}
+
+.hero-text h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 4rem;
+  line-height: 0.9;
+  color: var(--primary-yellow);
+}
+
+.hero-text h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 2.4rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  color: #ffffff;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+.hero-img {
+  width: 300px;
+  height: 340px;
+  border-radius: var(--card-radius);
   object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  margin-bottom: -5rem; /* Little Lemon signature overlapping effect */
 }
 
-/* Primary Action Buttons */
+/* Buttons */
 .btn-primary {
   background-color: var(--primary-yellow);
   color: var(--dark-charcoal);
   font-family: 'Karla', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
   border: none;
+  border-radius: var(--card-radius);
   cursor: pointer;
-  display: inline-block;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: inline-block;
 }
 
 .btn-primary:hover {
   background-color: #e5be0b;
 }
 
-.btn-primary:active {
-  transform: scale(0.98);
+/* 3. Specials Section */
+.specials-section {
+  max-width: 1000px;
+  margin: 6rem auto 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.specials-header h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 3rem;
+  color: var(--dark-charcoal);
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.special-card {
+  background-color: var(--highlight-gray);
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-title-price h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--secondary-peach);
+  font-size: 1rem;
+}
+
+.card-content p {
+  color: #495e57;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.card-delivery-action {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--dark-charcoal);
+  cursor: pointer;
+}
+
+/* 4. Testimonials Section */
+.testimonials-section {
+  background-color: var(--highlight-gray);
+  padding: 4rem 1.5rem;
+}
+
+.testimonials-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonials-container h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 3rem;
+  color: var(--dark-charcoal);
+  margin-bottom: 2.5rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: var(--card-radius);
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.rating {
+  color: var(--primary-yellow);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.customer-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #cccccc;
+  border-radius: 50%;
+}
+
+.testimonial-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.review-text {
+  font-size: 0.85rem;
+  color: #555555;
+  line-height: 1.4;
+}
+
+/* 5. Chicago / About Section */
+.chicago-section {
+  padding: 5rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.chicago-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.chicago-text {
+  max-width: 480px;
+}
+
+.chicago-text h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 3.5rem;
+  line-height: 0.9;
+  color: var(--primary-green);
+}
+
+.chicago-text h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 2.2rem;
+  color: var(--dark-charcoal);
+  margin-bottom: 1.25rem;
+}
+
+.chicago-text p {
+  color: #495e57;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.chicago-images {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.about-img {
+  width: 220px;
+  height: 270px;
+  border-radius: var(--card-radius);
+  object-fit: cover;
+  position: absolute;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.img-back {
+  top: 0;
+  right: 0;
+}
+
+.img-front {
+  bottom: 0;
+  left: 0;
+  border: 4px solid #ffffff;
+}
+
+/* 6. Footer Section */
+.footer-section {
+  background-color: var(--primary-green);
+  color: #ffffff;
+  padding: 4rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr;
+  gap: 2rem;
+}
+
+.footer-logo {
+  max-width: 120px;
+  filter: brightness(0) invert(1); /* makes the dark svg logo crisp white for dark footer */
+}
+
+.footer-col h4 {
+  font-family: 'Markazi Text', serif;
+  font-size: 1.6rem;
+  color: var(--primary-yellow);
+  margin-bottom: 0.75rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.footer-col a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: var(--secondary-peach);
+}
+
+/* Responsive adjustments */
+@media (max-width: 820px) {
+  .hero-content,
+  .chicago-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-img {
+    margin-bottom: 0;
+  }
+  .specials-grid,
+  .testimonials-grid,
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .chicago-images {
+    width: 260px;
+    height: 260px;
+  }
 }
