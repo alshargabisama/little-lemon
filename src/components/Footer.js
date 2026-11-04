@@ -6,7 +6,7 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-col footer-logo-col">
           <img 
-            src="https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/main/src/images/Logo.svg" 
+            src="/little-lemon-footer-logo.png" 
             alt="Little Lemon" 
             className="footer-logo" 
           />

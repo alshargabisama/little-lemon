@@ -22,7 +22,7 @@ function CallToAction() {
         </div>
         <div className="hero-image-wrapper">
           <img 
-            src="https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/main/src/images/restauranfood.jpg" 
+            src="/icons_assets/restauranfood.jpg" 
             alt="Little Lemon restaurant food tray" 
             className="hero-img" 
           />

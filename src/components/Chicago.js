@@ -17,12 +17,12 @@ function Chicago() {
         </div>
         <div className="chicago-images">
           <img 
-            src="https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/main/src/images/Mario%20and%20Adrian%20A.jpg" 
+            src="/icons_assets/Mario and Adrian A.jpg" 
             alt="Mario and Adrian cooking" 
             className="about-img img-back" 
           />
           <img 
-            src="https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/main/src/images/Mario%20and%20Adrian%20b.jpg" 
+            src="/icons_assets/Mario and Adrian b.jpg" 
             alt="Mario and Adrian in the restaurant" 
             className="about-img img-front" 
           />

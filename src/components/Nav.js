@@ -4,11 +4,11 @@ function Nav() {
   return (
     <header className="header-nav-container">
       <Link to="/" className="logo-link">
-       <img 
-  src="https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/main/src/images/Logo.svg" 
-  alt="Little Lemon Logo" 
-  className="nav-logo" 
-/>
+        <img 
+          src="/icons_assets/Logo.svg" 
+          alt="Little Lemon Logo" 
+          className="nav-logo" 
+        />
       </Link>
       <nav aria-label="Main Navigation">
         <ul className="nav-menu">
