@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -10,6 +12,25 @@ function Nav() {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  // Smooth scroll handler for anchor links on homepage
+  const handleAnchorClick = (e, targetId) => {
+    closeMenu();
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -49,11 +70,10 @@ function Nav() {
       <nav aria-label="Main Navigation" className="navbar">
         <ul className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
           <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-          <li><a href="#about" onClick={closeMenu}>About</a></li>
-          <li><a href="#menu" onClick={closeMenu}>Menu</a></li>
+          <li><a href="#about" onClick={(e) => handleAnchorClick(e, 'about')}>About</a></li>
+          <li><a href="#menu" onClick={(e) => handleAnchorClick(e, 'menu')}>Menu</a></li>
           <li><Link to="/booking" onClick={closeMenu}>Reservations</Link></li>
-          <li><a href="#order" onClick={closeMenu}>Order Online</a></li>
-          <li><a href="#login" onClick={closeMenu}>Login</a></li>
+          <li><a href="#order" onClick={(e) => handleAnchorClick(e, 'menu')}>Order Online</a></li>
         </ul>
       </nav>
     </header>

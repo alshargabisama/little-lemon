@@ -1,8 +1,8 @@
-function Header(){
-    return (
-<header classNmae="header"> 
-    <img  src="" alt="little-lemon-logo" /> 
-</header>
-    );
+function Header() {
+  return (
+    <header className="header"> 
+      <img src="/icons_assets/Logo.svg" alt="Little Lemon Logo" /> 
+    </header>
+  );
 }
-export default Header; 
+export default Header;

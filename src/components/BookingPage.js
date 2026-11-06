@@ -2,18 +2,15 @@ import { useState, useEffect } from 'react';
 import BookingForm from './BookingForm';
 
 function BookingPage({ availableTimes, dispatch, submitForm }) {
-  // 1. Initialize bookingData directly from localStorage
   const [bookingData, setBookingData] = useState(() => {
     const savedBookings = localStorage.getItem('bookingData');
     return savedBookings ? JSON.parse(savedBookings) : [];
   });
 
-  // 2. Synchronize bookingData changes to localStorage
   useEffect(() => {
     localStorage.setItem('bookingData', JSON.stringify(bookingData));
   }, [bookingData]);
 
-  // 3. Handler to append new reservation to existing data
   const handleBookingSubmit = (newBooking) => {
     setBookingData((prevBookings) => {
       const updatedBookings = [...prevBookings, newBooking];
@@ -47,7 +44,7 @@ function BookingPage({ availableTimes, dispatch, submitForm }) {
           />
         </div>
 
-        {/* 4. Reservations Table: Shows existing data from localStorage */}
+        {/* Reservations Table */}
         <div className="booking-table-container">
           <h2>Current Reservations</h2>
           {bookingData.length === 0 ? (
@@ -57,21 +54,23 @@ function BookingPage({ availableTimes, dispatch, submitForm }) {
               <table className="booking-table" aria-label="Bookings List">
                 <thead>
                   <tr>
+                    <th>Name</th>
+                    <th>Email</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Guests</th>
                     <th>Seating</th>
-                    <th>Occasion</th>
                   </tr>
                 </thead>
                 <tbody>
                   {bookingData.map((booking, index) => (
                     <tr key={index}>
+                      <td>{booking.fullName}</td>
+                      <td>{booking.email}</td>
                       <td>{booking.date}</td>
                       <td>{booking.time}</td>
                       <td>{booking.guests}</td>
                       <td>{booking.seating}</td>
-                      <td>{booking.occasion}</td>
                     </tr>
                   ))}
                 </tbody>

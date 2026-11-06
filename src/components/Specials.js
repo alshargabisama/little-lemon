@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 function Specials() {
+  const [selectedDish, setSelectedDish] = useState(null);
+
   const specialsData = [
     {
       id: 1,
@@ -23,30 +27,46 @@ function Specials() {
     }
   ];
 
+  const handleOrderClick = (dishTitle) => {
+    setSelectedDish(dishTitle);
+    alert(`🛒 Added "${dishTitle}" to your delivery order!`);
+  };
+
   return (
     <section className="specials-section" id="menu">
       <div className="specials-header">
         <h2>This weeks specials!</h2>
-        <button className="btn-primary">Online Menu</button>
+        <button className="btn-primary" onClick={() => alert('Opening full online menu...')}>
+          Online Menu
+        </button>
       </div>
       <div className="specials-grid">
         {specialsData.map((item) => (
-          <article className="special-card" key={item.id}>
-            <img src={item.image} alt={item.title} className="card-img" />
+          <article 
+            className={`special-card ${selectedDish === item.title ? 'card-selected' : ''}`} 
+            key={item.id}
+          >
+            <div className="card-img-wrapper">
+              <img src={item.image} alt={item.title} className="card-img" />
+            </div>
             <div className="card-content">
               <div className="card-title-price">
                 <h3>{item.title}</h3>
                 <span className="price">{item.price}</span>
               </div>
               <p>{item.description}</p>
-              <div className="card-delivery-action">
+              <button 
+                className="card-delivery-action"
+                onClick={() => handleOrderClick(item.title)}
+                aria-label={`Order a delivery for ${item.title}`}
+              >
                 <span>Order a delivery</span>
                 <img 
                   src="/icons_assets/Dish icon.svg" 
-                  alt="Delivery icon" 
+                  alt="" 
                   style={{ width: "20px", height: "20px" }} 
                 />
-              </div>
+              </button>
             </div>
           </article>
         ))}

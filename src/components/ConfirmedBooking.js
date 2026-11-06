@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function ConfirmedBooking() {
   return (
-    <section className="confirmed-booking-wrapper" aria-label="Booking confirmation">
+    <main className="confirmed-booking-wrapper" aria-label="Booking confirmation">
       <div className="confirmed-card">
         <div className="success-icon-wrapper">
           <svg
@@ -26,11 +26,11 @@ function ConfirmedBooking() {
         <p className="confirmation-note">
           A confirmation SMS and email have been dispatched. We look forward to hosting you!
         </p>
-        <Link to="/" className="btn-primary back-home-btn">
+        <Link to="/" className="btn-primary back-home-btn" aria-label="Return to homepage">
           Back to Homepage
         </Link>
       </div>
-    </section>
+    </main>
   );
 }
 
