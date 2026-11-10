@@ -1,10 +1,10 @@
-# Little Lemon Restaurant Web Application 🍋
+# Little Lemon Restaurant Web Application 
 
 A fully responsive web application built for the **Meta Front-End Developer Capstone Project**. Little Lemon is a family-owned Mediterranean restaurant based in Chicago, featuring online table reservations, dynamic time slots, robust form validation, and full accessibility compliance.
 
 ---
 
-## 🚀 Features Implemented
+##  Features Implemented
 
 - **Interactive Homepage:** Features a hero section, specials menu with interactive cards, customer testimonials, and restaurant history (Chicago section).
 - **Table Reservation System (`/booking`):**
@@ -18,7 +18,7 @@ A fully responsive web application built for the **Meta Front-End Developer Caps
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
 - **React** (v18) & **React Router** (v6)
 - **JavaScript (ES6+)**
@@ -27,7 +27,7 @@ A fully responsive web application built for the **Meta Front-End Developer Caps
 
 ---
 
-## 📦 Installation & Setup Instructions
+##  Installation & Setup Instructions
 
 To run this project locally on your machine, follow these steps:
 
